@@ -6,8 +6,8 @@ public class PlayerOrientation : MonoBehaviour
 {
     void Update()
     {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var delta = worldPosition - transform.position;
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var delta = worldPosition - (Vector2)transform.position;
         if (delta.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
