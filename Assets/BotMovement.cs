@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IMovement
+public class BotMovement : MonoBehaviour, IMovement
 {
+    public Vector2 perfDistance = new Vector2(3, 4);
+    public float jumpDist = 4f;
+    [Space]
     public float speed = 200;
     public float speedMult = .7f;
     public float speedMultInAir = .98f;
@@ -14,6 +17,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
 
     Rigidbody2D rb;
     GroundDetector gd;
+    BotSight bs;
 
     Vector2 input;
     public Vector2 CurrentInput => input;
@@ -22,17 +26,12 @@ public class PlayerMovement : MonoBehaviour, IMovement
     {
         rb = GetComponent<Rigidbody2D>();
         gd = GetComponentInChildren<GroundDetector>();
+        bs = GetComponentInChildren<BotSight>();
         rb.gravityScale = gravity;
     }
 
     void FixedUpdate()
     {
-        // if in jump and 'W' is released
-        //if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0)
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / jumpVelCut);
-        //}
-
         var input = CreateInput();
 
         if (gd.onGround)
@@ -66,17 +65,23 @@ public class PlayerMovement : MonoBehaviour, IMovement
     private Vector2 CreateInput()
     {
         input = Vector2.zero;
-        if (Input.GetKey(KeyCode.A))
-            input -= Vector2.right;
-        if (Input.GetKey(KeyCode.D))
-            input += Vector2.right;
-        if (Input.GetKeyDown(KeyCode.W))
-            input += Vector2.up;
+        if (bs.canSee)
+        {
+            input.x  = bs.vectorToPlayer.x > 0 ? 1 : -1;
+            if (bs.distanceToPlayer < perfDistance.x)
+            {
+                input.x *= -1;
+            }
+            else if (bs.distanceToPlayer > perfDistance.y)
+            {
+
+            }
+            else
+            {
+                input.x = 0;
+            }
+            input.y  = bs.vectorToPlayer.y > jumpDist ? 1 : 0;
+        }
         return input;
     }
-}
-
-public interface IMovement
-{
-    Vector2 CurrentInput { get; }
 }

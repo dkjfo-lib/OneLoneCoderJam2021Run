@@ -11,6 +11,11 @@ public class GroundDetector : MonoBehaviour
         onGround = true;
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        onGround = true;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         onGround = false;
