@@ -323,8 +323,8 @@ GameObject:
   - component: {fileID: 6570653981183897366}
   - component: {fileID: 6570653981183897361}
   - component: {fileID: 6570653981183897363}
-  - component: {fileID: 6570653981183897360}
   - component: {fileID: 1986837887}
+  - component: {fileID: 2011261160413822502}
   m_Layer: 12
   m_Name: body
   m_TagString: Untagged
@@ -414,22 +414,6 @@ MonoBehaviour:
   isHead: 0
   Headfull: {fileID: 5047736696966280967, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
   Headless: {fileID: 5239000466973193857, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
---- !u!70 &6570653981183897360
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6570653981183897367}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5028447}
-  m_Size: {x: 0.64659244, y: 0.9943106}
-  m_Direction: 0
 --- !u!114 &1986837887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +432,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41f34c211ad822742831cb8046c855de, type: 3}
   Falling: {fileID: 21300000, guid: bafa0e3440b2fdd4b8fcfab8e8673b1d, type: 3}
   GroundDetector: {fileID: 6570653981431764339}
+--- !u!61 &2011261160413822502
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570653981183897367}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.44624293}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.16, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.97423595, y: 1.1075141}
+  m_EdgeRadius: 0
 --- !u!1 &6570653981218689194
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,9 +853,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041666746, y: 0.35190153}
+  m_Offset: {x: 0.041666746, y: 0.44530118}
   serializedVersion: 2
-  m_Radius: 0.4064083
+  m_Radius: 0.31300867
 --- !u!114 &6570653982499194432
 MonoBehaviour:
   m_ObjectHideFlags: 0

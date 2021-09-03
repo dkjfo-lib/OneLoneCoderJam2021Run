@@ -16,7 +16,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         yield return new WaitUntil(() => PlayerSinglton.thePlayer == null);
         Time.timeScale = .5f;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Time.timeScale = 1;
         var curScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(curScene);

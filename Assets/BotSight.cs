@@ -12,6 +12,7 @@ public class BotSight : MonoBehaviour
     public Vector3 directionToPlayer => vectorToPlayer.normalized;
     public float distanceToPlayer => vectorToPlayer.magnitude;
 
+    public Transform hitted;
     public bool canSee = false;
 
     void Start()
@@ -27,8 +28,9 @@ public class BotSight : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => thePlayer != null);
-            var hit = Physics2D.Raycast(transform.position + directionToPlayer * innerRadius, directionToPlayer, distanceToPlayer, Layers.CharactersAndGround);
+            var hit = Physics2D.Raycast(transform.position + directionToPlayer * innerRadius, directionToPlayer, distanceToPlayer - innerRadius + .75f, Layers.CharactersAndGround);
 
+            hitted = hit.transform;
             if (hit.transform != null)
             {
                 canSee = hit.transform.GetComponent<PlayerSinglton>() != null;
@@ -65,5 +67,11 @@ public class BotSight : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, innerRadius);
+
+        if (thePlayer != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position + directionToPlayer * innerRadius, transform.position + directionToPlayer * (distanceToPlayer - innerRadius + .75f));
+        }
     }
 }

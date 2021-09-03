@@ -23,6 +23,7 @@ public class Door : MonoBehaviour
         var player = collision.GetComponent<PlayerSinglton>();
         if (player == null) return;
 
+        isOpen = true;
         StartCoroutine(SpawnBot());
     }
 
