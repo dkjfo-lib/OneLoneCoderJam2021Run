@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2872969180501701950}
   - component: {fileID: 3054693774309698415}
   m_Layer: 10
-  m_Name: GunShot
+  m_Name: Enemy GunShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 25
+  timeToLive: 0.4
   FactionToHit: 0
 --- !u!212 &8131752207237723762
 SpriteRenderer:

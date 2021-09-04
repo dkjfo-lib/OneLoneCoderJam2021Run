@@ -6,6 +6,7 @@ public class GunShot : MonoBehaviour, ICanHit
 {
     public float damage = 1;
     public float speed = 10;
+    public float timeToLive = .75f;
     public Faction FactionToHit = Faction.AlwaysHit;
 
     public Object CoreObject => transform;
@@ -14,6 +15,11 @@ public class GunShot : MonoBehaviour, ICanHit
     public bool IsEnemy(Faction faction)
     {
         return faction == FactionToHit;
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, timeToLive);
     }
 
     void Update()

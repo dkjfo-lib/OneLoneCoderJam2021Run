@@ -47,11 +47,11 @@ public class DoorSpawner : MonoBehaviour
 
     IEnumerator SpawnBot()
     {
-        yield return new WaitForSeconds(.3f);
         foreach (var light in Lights)
         {
             light.color = colorOn;
         }
+        yield return new WaitForSeconds(.3f);
 
         Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_open, transform.position));
         yield return new WaitForSeconds(.1f);
