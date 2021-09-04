@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
             input -= Vector2.right;
         if (Input.GetKey(KeyCode.D))
             input += Vector2.right;
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
             input += Vector2.up;
         return input;
     }

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aabe7330303afb4ebbc23ff60d67f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 12
   innerRadius: 1.2
   thePlayer: {fileID: 0}
   hitted: {fileID: 0}
@@ -162,12 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7592ba536cc194e4984e985877cc4dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfDistance: {x: 3, y: 4}
+  perfDistance: {x: 4, y: 10}
   jumpDist: 4
   speed: 200
   speedMult: 0.7
   speedMultInAir: 0.98
-  jumpForce: 200
+  jumpForce: 10
   jumpVelCut: 2
   gravity: 3
 --- !u!114 &5515412463093121485

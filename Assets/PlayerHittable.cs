@@ -41,7 +41,7 @@ public class PlayerHittable : MonoBehaviour, IHittable
         if (addon_onBodyPartDestroyParticles != null)
         {
             var praticles = Instantiate(addon_onBodyPartDestroyParticles, transform.position, Quaternion.identity);
-            Destroy(praticles, 3);
+            Destroy(praticles.gameObject, 3);
         }
 
         Destroy(transform.parent.parent.gameObject);
