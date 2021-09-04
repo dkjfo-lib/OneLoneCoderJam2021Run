@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class Door : MonoBehaviour
+public class DoorSpawner : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderers;
     [Space]
@@ -15,10 +15,28 @@ public class Door : MonoBehaviour
     [Space]
     public GameObject bot;
     public bool isOpen = false;
+    [Space]
+    public Pipe_SoundsPlay Pipe_SoundsPlay;
+    public ClipsCollection sounds_open;
+    [Space]
+    [Range(0, 1)] public float chanceToSpawn = .33f;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (isOpen) return;
+        if (Random.Range(0f, 1f) > chanceToSpawn) return;
+
+        var player = collision.GetComponent<PlayerSinglton>();
+        if (player == null) return;
+
+        isOpen = true;
+        StartCoroutine(SpawnBot());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isOpen) return;
+        if (Random.Range(0f, 1f) > chanceToSpawn) return;
 
         var player = collision.GetComponent<PlayerSinglton>();
         if (player == null) return;
@@ -35,6 +53,7 @@ public class Door : MonoBehaviour
             light.color = colorOn;
         }
 
+        Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_open, transform.position));
         yield return new WaitForSeconds(.1f);
         SpriteRenderers.sprite = Sprites[0];
 

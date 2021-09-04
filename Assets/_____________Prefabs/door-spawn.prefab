@@ -327,6 +327,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0e87fb2b4f95d8e4aaabce6aa2264c35, type: 3}
   bot: {fileID: 5232324184390980647, guid: 826667f101fa169408976e109e48533b, type: 3}
   isOpen: 0
+  Pipe_SoundsPlay: {fileID: 11400000, guid: 49c7055d96e6a844d8e1e445464b45ca, type: 2}
+  sounds_open: {fileID: 11400000, guid: bc05308fc33bfe5439caa286cd002857, type: 2}
 --- !u!61 &8505967994055371936
 BoxCollider2D:
   m_ObjectHideFlags: 0

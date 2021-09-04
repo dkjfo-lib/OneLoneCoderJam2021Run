@@ -130,6 +130,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1170c788b92b78d44b8f4f1bcc551d40, type: 3}
   - {fileID: 21300000, guid: 9301f35838ec688428fb342a0e5b3856, type: 3}
   - {fileID: 21300000, guid: 1d60204b0a690414294492ed521850f9, type: 3}
+  Pipe_SoundsPlay: {fileID: 11400000, guid: 49c7055d96e6a844d8e1e445464b45ca, type: 2}
+  sounds_closed: {fileID: 11400000, guid: bc05308fc33bfe5439caa286cd002857, type: 2}
+  sounds_open: {fileID: 11400000, guid: bc05308fc33bfe5439caa286cd002857, type: 2}
 --- !u!114 &6372546111579158101
 MonoBehaviour:
   m_ObjectHideFlags: 0

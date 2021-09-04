@@ -14,13 +14,22 @@ public class PlayerHittable : MonoBehaviour, IHittable
     public Corpse Headless;
     [Space]
     public ParticleSystem addon_onBodyPartDestroyParticles;
+    [Space]
+    public Pipe_SoundsPlay Pipe_SoundsPlay;
+    public ClipsCollection sounds_hit;
+    public ClipsCollection sounds_bodyPartDestroed;
 
     public void GetHit(Hit hit)
     {
         hp -= hit.damage;
         if (hp <= 0)
         {
+            Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_bodyPartDestroed, transform.position));
             Die();
+        }
+        else
+        {
+            Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_hit, transform.position));
         }
     }
 

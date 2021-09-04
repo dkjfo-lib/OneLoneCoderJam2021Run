@@ -8,6 +8,10 @@ public class DoorWall : MonoBehaviour
     public bool isOpen;
     [Space]
     public Sprite[] sprites;
+    [Space]
+    public Pipe_SoundsPlay Pipe_SoundsPlay;
+    public ClipsCollection sounds_closed;
+    public ClipsCollection sounds_open;
     
     BoxCollider2D BoxCollider2D;
     SpriteRenderer SpriteRenderer;
@@ -28,6 +32,7 @@ public class DoorWall : MonoBehaviour
             if (shouldBeOpen)
             {
                 // open
+                Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_open, transform.position));
                 yield return new WaitForSeconds(.1f);
                 SpriteRenderer.sprite = sprites[1];
 
@@ -38,6 +43,7 @@ public class DoorWall : MonoBehaviour
             else
             {
                 //close 
+                Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_closed, transform.position));
                 yield return new WaitForSeconds(.1f);
                 SpriteRenderer.sprite = sprites[1];
 
