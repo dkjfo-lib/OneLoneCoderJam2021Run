@@ -12,6 +12,8 @@ public class PlayerHittable : MonoBehaviour, IHittable
     public bool isHead = false;
     public Corpse Headfull;
     public Corpse Headless;
+    [Space]
+    public ParticleSystem addon_onBodyPartDestroyParticles;
 
     public void GetHit(Hit hit)
     {
@@ -26,6 +28,13 @@ public class PlayerHittable : MonoBehaviour, IHittable
     {
         var corpse = Instantiate(isHead ? Headless : Headfull, transform.position, Quaternion.identity);
         corpse.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+
+        if (addon_onBodyPartDestroyParticles != null)
+        {
+            var praticles = Instantiate(addon_onBodyPartDestroyParticles, transform.position, Quaternion.identity);
+            Destroy(praticles, 3);
+        }
+
         Destroy(transform.parent.parent.gameObject);
     }
 }

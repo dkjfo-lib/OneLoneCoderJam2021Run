@@ -47,6 +47,7 @@ MonoBehaviour:
   radius: 5
   innerRadius: 1.2
   thePlayer: {fileID: 0}
+  hitted: {fileID: 0}
   canSee: 0
 --- !u!58 &5711044758720897543
 CircleCollider2D:
@@ -294,11 +295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaf9a7c3745a0a43b3ed47aa64c09b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 1
   faction: 3
   isHead: 1
   Headfull: {fileID: 5047736696966280967, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
   Headless: {fileID: 5239000466973193857, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
+  addon_onBodyPartDestroyParticles: {fileID: 9016459303696241561, guid: d39856a2eb7b09c40a822bb4134aec2f, type: 3}
 --- !u!114 &4583831981183375671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,11 +808,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaf9a7c3745a0a43b3ed47aa64c09b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 4
   faction: 3
   isHead: 0
   Headfull: {fileID: 5047736696966280967, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
   Headless: {fileID: 5239000466973193857, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
+  addon_onBodyPartDestroyParticles: {fileID: 0}
 --- !u!114 &1454494180858428228
 MonoBehaviour:
   m_ObjectHideFlags: 0
