@@ -9,6 +9,9 @@ public class PlayerShoot : MonoBehaviour
     public float primariShootsPerSecond = 4;
     bool canShootPrimary = true;
     [Space]
+    public GunShot projectileSecondary;
+    public float secondaryShootsPerSecond = 4;
+    [Space]
     public SpriteRenderer gunpoint;
 
     void Update()
@@ -16,6 +19,10 @@ public class PlayerShoot : MonoBehaviour
         if (canShootPrimary && Input.GetMouseButton(0))
         {
             StartCoroutine(ShootPrimary());
+        }
+        if (canShootPrimary && Input.GetMouseButton(1))
+        {
+            StartCoroutine(ShootSecondary());
         }
     }
 
@@ -30,6 +37,20 @@ public class PlayerShoot : MonoBehaviour
         gunpoint.color = new Color(0, 0, 0, 0);
 
         yield return new WaitForSeconds(1 / primariShootsPerSecond);
+        canShootPrimary = true;
+    }
+
+    private IEnumerator ShootSecondary()
+    {
+        canShootPrimary = false;
+        var newShot = Instantiate(projectileSecondary, gunpoint.transform.position, transform.rotation);
+        newShot.FactionToHit = Faction.OpponentTeam;
+
+        gunpoint.color = Color.white;
+        yield return new WaitForSeconds(Mathf.Min(1 / secondaryShootsPerSecond, .05f));
+        gunpoint.color = new Color(0, 0, 0, 0);
+
+        yield return new WaitForSeconds(1 / secondaryShootsPerSecond);
         canShootPrimary = true;
     }
 }

@@ -157,6 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 7232707771191959695, guid: d4855901354e85d409a3337803882a9e, type: 3}
   primariShootsPerSecond: 16
+  projectileSecondary: {fileID: 3912677773733512051, guid: 9b3fd703001a24e42a9b8a6712f5a577, type: 3}
+  secondaryShootsPerSecond: 2
   gunpoint: {fileID: 6570653980767224210}
 --- !u!1 &6570653980767224208
 GameObject:
