@@ -10,8 +10,8 @@ public class PlayerHittable : MonoBehaviour, IHittable
     public Faction Faction => faction;
     [Space]
     public bool isHead = false;
-    public Corpse Headfull;
-    public Corpse Headless;
+    public GameObject Headfull;
+    public GameObject Headless;
     [Space]
     public ParticleSystem addon_onBodyPartDestroyParticles;
     [Space]
@@ -24,19 +24,22 @@ public class PlayerHittable : MonoBehaviour, IHittable
         hp -= hit.damage;
         if (hp <= 0)
         {
-            Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_bodyPartDestroed, transform.position));
+            Pipe_SoundsPlay?.AddClip(new PlayClipData(sounds_bodyPartDestroed, transform.position));
             Die();
         }
         else
         {
-            Pipe_SoundsPlay.AddClip(new PlayClipData(sounds_hit, transform.position));
+            Pipe_SoundsPlay?.AddClip(new PlayClipData(sounds_hit, transform.position));
         }
     }
 
     private void Die()
     {
-        var corpse = Instantiate(isHead ? Headless : Headfull, transform.position, Quaternion.identity);
-        corpse.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+        if (Headless != null || Headfull != null)
+        {
+            var corpse = Instantiate(isHead ? Headless : Headfull, transform.position, Quaternion.identity);
+            corpse.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+        }
 
         if (addon_onBodyPartDestroyParticles != null)
         {

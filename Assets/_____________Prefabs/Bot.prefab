@@ -298,8 +298,8 @@ MonoBehaviour:
   hp: 1
   faction: 3
   isHead: 1
-  Headfull: {fileID: 5047736696966280967, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
-  Headless: {fileID: 5239000466973193857, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
+  Headfull: {fileID: 5047736696966280963, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
+  Headless: {fileID: 5239000466973193869, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
   addon_onBodyPartDestroyParticles: {fileID: 9016459303696241561, guid: d39856a2eb7b09c40a822bb4134aec2f, type: 3}
   Pipe_SoundsPlay: {fileID: 11400000, guid: 49c7055d96e6a844d8e1e445464b45ca, type: 2}
   sounds_hit: {fileID: 11400000, guid: 5fc95cab4bb8cbd448f8d107dbf381be, type: 2}
@@ -814,8 +814,8 @@ MonoBehaviour:
   hp: 4
   faction: 3
   isHead: 0
-  Headfull: {fileID: 5047736696966280967, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
-  Headless: {fileID: 5239000466973193857, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
+  Headfull: {fileID: 5047736696966280963, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
+  Headless: {fileID: 5239000466973193869, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
   addon_onBodyPartDestroyParticles: {fileID: 0}
   Pipe_SoundsPlay: {fileID: 11400000, guid: 49c7055d96e6a844d8e1e445464b45ca, type: 2}
   sounds_hit: {fileID: 11400000, guid: 5fc95cab4bb8cbd448f8d107dbf381be, type: 2}
