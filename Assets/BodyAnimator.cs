@@ -25,7 +25,6 @@ public class BodyAnimator : MonoBehaviour
         else if (movement.CurrentInput != Vector2.zero)
         {
             int id = (int)((Time.timeSinceLevelLoad % .5f) * 4f);
-            Debug.Log(id);
             SpriteRenderer.sprite = Walking[id];
         }
         else
