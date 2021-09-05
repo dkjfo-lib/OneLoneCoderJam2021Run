@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lvl1Ending : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] botsToKill;
+    public string nextScene;
+
     void Start()
     {
-        
+        StartCoroutine(WaitForBossToBeDead());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator WaitForBossToBeDead()
     {
-        
+        yield return new WaitUntil(() => botsToKill.All(s => s == null));
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(nextScene);
     }
 }
