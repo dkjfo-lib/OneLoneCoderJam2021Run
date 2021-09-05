@@ -415,7 +415,7 @@ MonoBehaviour:
   faction: 2
   value: {fileID: 11400000, guid: 5493bb20cbea8a94b91cfbea3f2e01a0, type: 2}
   isHead: 0
-  Headfull: {fileID: 5047736696966280963, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
+  Headfull: {fileID: 8290164889711710239, guid: 799b4f9feb83a2c46ad5b8dac61a784b, type: 3}
   Headless: {fileID: 5239000466973193869, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
   addon_onBodyPartDestroyParticles: {fileID: 0}
   Pipe_SoundsPlay: {fileID: 11400000, guid: 49c7055d96e6a844d8e1e445464b45ca, type: 2}
@@ -823,7 +823,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 5872916e9a7d3b949bcd31d31b48e26e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5d680f91f437e646b5215eb8320bbd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
