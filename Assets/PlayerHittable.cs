@@ -9,6 +9,8 @@ public class PlayerHittable : MonoBehaviour, IHittable
     public Faction faction = Faction.AlwaysHit;
     public Faction Faction => faction;
     [Space]
+    public ClampedValue value;
+    [Space]
     public bool isHead = false;
     public GameObject Headfull;
     public GameObject Headless;
@@ -19,9 +21,16 @@ public class PlayerHittable : MonoBehaviour, IHittable
     public ClipsCollection sounds_hit;
     public ClipsCollection sounds_bodyPartDestroed;
 
+    private void Awake()
+    {
+        if (value != null) value.maxValue = hp;
+        if (value != null) value.value = hp;
+    }
+
     public void GetHit(Hit hit)
     {
         hp -= hit.damage;
+        if (value != null) value.value = hp;
         if (hp <= 0)
         {
             Pipe_SoundsPlay?.AddClip(new PlayClipData(sounds_bodyPartDestroed, transform.position));

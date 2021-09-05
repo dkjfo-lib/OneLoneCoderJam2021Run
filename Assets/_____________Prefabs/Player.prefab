@@ -411,8 +411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaf9a7c3745a0a43b3ed47aa64c09b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 12
+  hp: 15
   faction: 2
+  value: {fileID: 11400000, guid: 5493bb20cbea8a94b91cfbea3f2e01a0, type: 2}
   isHead: 0
   Headfull: {fileID: 5047736696966280963, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
   Headless: {fileID: 5239000466973193869, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
@@ -874,8 +875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaf9a7c3745a0a43b3ed47aa64c09b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 12
+  hp: 15
   faction: 2
+  value: {fileID: 11400000, guid: c9c07fb7e3f0194468fe518df0fde63b, type: 2}
   isHead: 1
   Headfull: {fileID: 5047736696966280963, guid: e086839dbb579c342a25a9b4ce7c823b, type: 3}
   Headless: {fileID: 5239000466973193869, guid: e2501dbfc52c1704eaead90f98cb1a62, type: 3}
