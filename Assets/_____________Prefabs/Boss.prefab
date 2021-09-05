@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aabe7330303afb4ebbc23ff60d67f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 12
+  radius: 15
   innerRadius: 1.2
   thePlayer: {fileID: 0}
   hitted: {fileID: 0}

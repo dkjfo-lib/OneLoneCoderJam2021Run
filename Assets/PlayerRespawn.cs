@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerRespawn : MonoBehaviour
 {
     public PlayerSinglton playerPrefab;
+    [Space]
+    public bool wasWithBosses = false;
+    public string normalLevel;
+    public string bossOnlyLevel;
 
     void Start()
     {
@@ -18,7 +22,14 @@ public class PlayerRespawn : MonoBehaviour
         Time.timeScale = .5f;
         yield return new WaitForSeconds(1);
         Time.timeScale = 1;
-        var curScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(curScene);
+
+        if (wasWithBosses)
+        {
+            SceneManager.LoadScene(bossOnlyLevel);
+        }
+        else
+        {
+            SceneManager.LoadScene(normalLevel);
+        }
     }
 }
