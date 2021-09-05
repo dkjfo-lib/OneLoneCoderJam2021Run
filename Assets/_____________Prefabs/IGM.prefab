@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botsToKill: []
-  nextScene: main
+  nextScene: closing
 --- !u!1 &2803421541988906307
 GameObject:
   m_ObjectHideFlags: 0
