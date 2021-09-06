@@ -8,7 +8,7 @@ public class PlayerSinglton : MonoBehaviour
 
     public bool NotActive = false;
 
-    void Start()
+    void Awake()
     {
         thePlayer = this;
     }

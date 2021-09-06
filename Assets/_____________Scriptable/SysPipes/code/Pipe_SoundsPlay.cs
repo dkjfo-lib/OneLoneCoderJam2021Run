@@ -5,12 +5,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SFXPlaylist", menuName = "Pipes/SFXPlaylist")]
 public class Pipe_SoundsPlay : ScriptableObject
 {
-    public List<PlayClipData> awaitingClips;
+    public List<PlayClipData> awaitingClips = new List<PlayClipData>();
+
+    public void AddClip(PlayClipData clipData)
+    {
+        awaitingClips.Add(clipData);
+    }
 }
 
 [System.Serializable]
-public class PlayClipData
+public struct PlayClipData
 {
     public ClipsCollection clipCollection;
     public Vector3 position;
+
+    public PlayClipData(ClipsCollection clipCollection, Vector3 position)
+    {
+        this.clipCollection = clipCollection;
+        this.position = position;
+    }
 }
